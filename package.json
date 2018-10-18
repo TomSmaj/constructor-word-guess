@@ -1,0 +1,25 @@
+{
+  "name": "constructor-word-guess",
+  "version": "1.0.0",
+  "description": "terminal word guess game that utilizes constructors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomSmaj/constructor-word-guess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomSmaj/constructor-word-guess/issues"
+  },
+  "homepage": "https://github.com/TomSmaj/constructor-word-guess#readme",
+  "dependencies": {
+    "npm": "^6.4.1",
+    "prompt": "^1.0.0",
+    "prompts": "^1.1.1",
+    "require": "^2.4.20"
+  }
+}
