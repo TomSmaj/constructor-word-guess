@@ -4,6 +4,7 @@ var prompts = require("prompts");
 
 let currentWord = "";
 let wordBank = [];
+let allowedChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 guessedLetters = "";
 totalWords = 0;
 let gRemaining = 10;
@@ -25,7 +26,6 @@ fs.readFile("word-bank.txt", (err, data) => {
         playGame();
     }
     else{
-        console.log("\n");
         currentWord.printWord();
         console.log("guessed letters: " + guessedLetters);
         console.log("Guesses remaining: " + gRemaining);
@@ -35,7 +35,11 @@ fs.readFile("word-bank.txt", (err, data) => {
            message: 'Guess a letter!'
         }).then(function(response){
             let includes = guessedLetters.includes(response.letter)
-            if(includes){
+            if(!allowedChars.includes(response.letter)){
+                console.log("\nInvalid Input.");
+                playGame();
+            }
+            else if(includes){
                 console.log("\nYou've already guessed that letter.");
                 playGame();
             }
@@ -54,7 +58,6 @@ fs.readFile("word-bank.txt", (err, data) => {
                return process.exit(1);
            }
            if(currentWord.isGuessed()){
-               console.log("\n");
                currentWord.printWord();
                if(wordBank.length === 0){
                     console.log("\n\n\n********************************\nThat's all the words! You win!!!\n********************************\n\n\n");

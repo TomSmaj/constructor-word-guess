@@ -12,9 +12,9 @@ function Word(word){
     this.printWord = function(){
         let outWord = "";
         for(let i = 0; i < this.wordArr.length; i++){
-            outWord += this.wordArr[i].print() + " "
+            outWord += this.wordArr[i].print() + " ";
         }
-        console.log(outWord);
+        console.log("\n" + outWord);
     }
     this.makeGuess = function(l){
         let correct = false;
